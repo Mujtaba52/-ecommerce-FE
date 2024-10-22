@@ -5,7 +5,7 @@ interface ProductProp {
     name: string;
     price:  number;
     originalPrice:  number;
-    discount:  string;
+    discount:  string | null;
     rating:  number;
     totalReviews: number,
     imageUrl:  string;
@@ -17,9 +17,13 @@ const ProductCard = ({product}:{product: ProductProp})=>{
     return (
         <>
             <div className="group relative w-[270px] h-[250px] bg-[#F5F5F5] rounded flex justify-center items-center">
-                <div className="flex absolute top-3 left-3 font-Poppins text-xs px-3 py-1 bg-red-600 text-white rounded">
-                    -{product.discount}
-                </div>
+                {
+                    product.discount && (
+                        <div className="flex absolute top-3 left-3 font-Poppins text-xs px-3 py-1 bg-red-600 text-white rounded">
+                            -{product.discount}
+                        </div>
+                    )
+                }
                 <div className="flex absolute top-3 right-3 flex-col space-y-2 ">
                     <div className="p-2 bg-white rounded-full shadow-md cursor-pointer">
                         <img src="src/assets/images/svg/landingPage/heart.svg" className="w-4 h-4" />

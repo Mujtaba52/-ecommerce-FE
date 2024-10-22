@@ -7,7 +7,7 @@ interface ProductProp {
     name: string;
     price:  number;
     originalPrice:  number;
-    discount:  string;
+    discount :  string | null;
     rating:  number;
     totalReviews: number,
     imageUrl:  string;
@@ -21,7 +21,7 @@ interface ProductCarouselProps {
 const ProductCarousel = ({products}:ProductCarouselProps )=>{
 
     return (
-        <div className="ml-[135px] ">
+        <div>
             <div className="h-12 font-Poppins font-semibold text-4xl mb-10">
                 Flash Sales
             </div>

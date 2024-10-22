@@ -12,8 +12,8 @@ const SideBarMenu = ()=>{
         "Health & Beauty"
       ];
     return (
-        <div>
-            <div className="flex-direction: row mt-10 ml-[135px] w-56 pr-4 border-r	">
+        <div className="border-r">
+            <div className="flex-direction: row mt-10 ml-[135px] w-56 pr-4">
                 {categories.map(( category)=> (
                      <div className="mt-4">
                      {category}

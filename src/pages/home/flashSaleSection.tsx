@@ -52,7 +52,7 @@ const FlashSaleSection = ()=>{
         name: "S-Series Comfort Chair",
         price: 375,
         originalPrice: 400,
-        discount: "25%",
+        discount: null,
         rating: 4.5,
         totalReviews: 99,
         imageUrl: "src/assets/images/svg/products/chair.svg" ,
@@ -60,12 +60,15 @@ const FlashSaleSection = ()=>{
         }
     ];
     return (
-        <>
-            <div className="pt-36 ml-[135px]">
+        <div className="ml-[135px]">
+            <div>
                 <HeadingWithBadge heading = {"Today's"} />
             </div>
             <ProductCarousel products = {productsList} />
-        </>
+            <div className="flex justify-center py-16 border-b mr-[135px]">
+                <button className="py-4 px-12 bg-[#DB4444] font-Poppins font-medium text-base text-white rounded">View All Products</button>   
+            </div>
+        </div>
     )
 
 }

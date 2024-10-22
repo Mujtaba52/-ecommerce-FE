@@ -25,7 +25,7 @@ const Header = ()=>{
                         <input
                             type="text"
                             placeholder="What are you looking for?"
-                            className="bg-transparent w-full"
+                            className="bg-transparent w-full p-2"
                         />
                         <img src="src/assets/images/svg/landingPage/searchBarIcon.svg"  className="w-6 h-6 cursor-pointer"/>
                     </div>
