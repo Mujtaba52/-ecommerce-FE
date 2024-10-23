@@ -1,16 +1,4 @@
-
-//TODO:Add this is in the interface folder
-interface ProductProp {
-    id: number;
-    name: string;
-    price:  number;
-    originalPrice:  number;
-    discount:  string | null;
-    rating:  number;
-    totalReviews: number,
-    imageUrl:  string;
-    isInStock: boolean;
-}
+import { ProductProp } from "../../types";
 
 const ProductCard = ({product}:{product: ProductProp})=>{
 
