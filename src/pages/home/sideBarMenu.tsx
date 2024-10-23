@@ -14,8 +14,8 @@ const SideBarMenu = ()=>{
     return (
         <div className="border-r">
             <div className="flex-direction: row mt-10 ml-[135px] w-56 pr-4">
-                {categories.map(( category)=> (
-                     <div className="mt-4">
+                {categories.map(( category, index)=> (
+                     <div key = {index} className="mt-4">
                      {category}
                  </div>
                 ))}

@@ -21,11 +21,11 @@ const Header = ()=>{
                     </button>
                 </div>
                 <div className="flex items-center space-x-6">
-                    <div className="flex items-center bg-transparent bg-[#F5F5F5] pl-5 pr-3 py-2 w-64 rounded" >
+                    <div className="flex items-center bg-transparent bg-[#f0efef] pl-5 pr-3 py-2 w-64 rounded" >
                         <input
                             type="text"
-                            placeholder="What are you looking for?"
-                            className="bg-transparent w-full p-2"
+                            placeholder="What are you looking for ?"
+                            className="bg-transparent w-full"
                         />
                         <img src="src/assets/images/svg/landingPage/searchBarIcon.svg"  className="w-6 h-6 cursor-pointer"/>
                     </div>

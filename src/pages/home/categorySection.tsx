@@ -41,7 +41,7 @@ const CategorySection = ()=>{
             <div className="flex gap-8">
                 {
                     categories.map((category, index)=>(
-                        <img src={category.icon} className=" hover:bg-[#DB4444] rounded" />
+                        <img key={index} src={category.icon} className=" hover:bg-[#DB4444] rounded" />
                     ))
                 }
             </div>
