@@ -62,7 +62,7 @@ const FlashSaleSection = ()=>{
     return (
         <div className="ml-[135px]">
             <div>
-                <HeadingWithBadge heading = {"Today's"} />
+                <HeadingWithBadge subHeading = {"Today's"} mainHeading={"Flash Sales"} />
             </div>
             <ProductCarousel products = {productsList} />
             <div className="flex justify-center py-16 border-b mr-[135px]">

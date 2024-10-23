@@ -3,6 +3,8 @@ import FlashSaleSection from "./flashSaleSection";
 import Header from "./header";
 import ImgSlider from "./imgSlider";
 import SideBarMenu from "./sideBarMenu";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 
 const Home = ()=>{
    
