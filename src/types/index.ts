@@ -17,6 +17,6 @@ export interface ProductCarouselProps {
 export interface HeadingWithBadgeProps {
     subHeading: string;
     mainHeading: string;
-    countdownTarget: string;
+    countdownTarget?: string;
   }
   
