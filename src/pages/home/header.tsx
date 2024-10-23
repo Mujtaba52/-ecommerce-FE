@@ -6,26 +6,26 @@ const Header = ()=>{
                 <div className="font-Inter font-bold text-2xl mr-48" >
                     Exclusive
                 </div>
-                <div className="font-Poppins font-normal text-base flex justify-around gap-x-12 mr-36">
-                    <button>
-                        Home
-                    </button>
-                    <button>
-                        Contact
-                    </button>
-                    <button>
-                        About
-                    </button>
-                    <button>
-                        Sign Up
-                    </button>
+                <div className="font-Poppins font-medium text-base flex justify-around gap-x-12 mr-36">
+                <button className="hover:underline underline-offset-4">
+                    Home
+                </button>
+                <button className="hover:underline underline-offset-4">
+                    Contact
+                </button>
+                <button className="hover:underline underline-offset-4">
+                    About
+                </button>
+                <button className="hover:underline underline-offset-4">
+                    Sign Up
+                </button>
                 </div>
                 <div className="flex items-center space-x-6">
-                    <div className="flex items-center bg-transparent bg-[#f0efef] pl-5 pr-3 py-2 w-64 rounded" >
+                    <div className="flex items-center bg-transparent bg-[#e1e1e1] pl-5 pr-3 py-2 w-64 rounded" >
                         <input
                             type="text"
                             placeholder="What are you looking for ?"
-                            className="bg-transparent w-full"
+                            className="bg-transparent w-full focus:outline-none"
                         />
                         <img src="src/assets/images/svg/landingPage/searchBarIcon.svg"  className="w-6 h-6 cursor-pointer"/>
                     </div>

@@ -5,16 +5,18 @@ import ImgSlider from "./imgSlider";
 import SideBarMenu from "./sideBarMenu";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import TopHeader from "./topHeader";
 
 const Home = ()=>{
    
     return (<>
+    <TopHeader />
     <Header />
-    <div className="flex gap-16">
+    <div className="flex gap-8">
         <SideBarMenu />
         <ImgSlider />
     </div>
-    <div className="pt-36">
+    <div className="pt-16">
         <FlashSaleSection />
     </div>
     <div className="pt-20">
