@@ -13,8 +13,8 @@ const ImgSlider = ()=>{
       };
     
       const sliderImages = [
-        "src/assets/images/svg/landingPage/sliderImg1.svg",
-        "src/assets/images/png/landingPage/tcl.webp"
+        "/assets/images/svg/landingPage/sliderImg1.svg",
+        "/assets/images/png/landingPage/tcl.webp"
       ]
 
     return (

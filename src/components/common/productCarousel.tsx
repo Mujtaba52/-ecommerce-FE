@@ -36,7 +36,7 @@ interface ProductCarouselProps {
         }}
         onClick={onClick}
       >
-       <img src="src/assets/images/svg/landingPage/rightArrow.svg" />
+       <img src="/assets/images/svg/landingPage/rightArrow.svg" />
       </div>
     );
   }
@@ -57,7 +57,7 @@ interface ProductCarouselProps {
         }}
         onClick={onClick}
       >
-        <img src="src/assets/images/svg/landingPage/leftArrow.svg" />
+        <img src="/assets/images/svg/landingPage/leftArrow.svg" />
       </div>
     );
   }

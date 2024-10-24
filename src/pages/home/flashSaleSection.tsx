@@ -11,7 +11,7 @@ const FlashSaleSection = ()=>{
         discount: "40%",
         rating: 4.5,
         totalReviews: 88,
-        imageUrl: "src/assets/images/svg/products/ps5Controller.svg",
+        imageUrl: "/assets/images/svg/products/ps5Controller.svg",
         isInStock: true,
         },
         {
@@ -22,7 +22,7 @@ const FlashSaleSection = ()=>{
         discount: "35%",
         rating: 3.5,
         totalReviews: 75,
-        imageUrl: "src/assets/images/svg/products/keyboard.svg",
+        imageUrl: "/assets/images/svg/products/keyboard.svg",
         isInStock: true,
         },
         {
@@ -33,7 +33,7 @@ const FlashSaleSection = ()=>{
         discount: "30%",
         rating: 4.5,
         totalReviews: 99,
-        imageUrl: "src/assets/images/svg/products/monitor.svg",
+        imageUrl: "/assets/images/svg/products/monitor.svg",
         isInStock: true,
         },
         {
@@ -44,7 +44,7 @@ const FlashSaleSection = ()=>{
         discount: "25%",
         rating: 4.5,
         totalReviews: 99,
-        imageUrl: "src/assets/images/svg/products/chair.svg" ,
+        imageUrl: "/assets/images/svg/products/chair.svg" ,
         isInStock: true,
         },
         {
@@ -55,7 +55,7 @@ const FlashSaleSection = ()=>{
         discount: null,
         rating: 4.5,
         totalReviews: 99,
-        imageUrl: "src/assets/images/svg/products/chair.svg" ,
+        imageUrl: "/assets/images/svg/products/chair.svg" ,
         isInStock: true,
         }
     ];

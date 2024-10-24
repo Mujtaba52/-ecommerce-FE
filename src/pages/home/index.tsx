@@ -26,7 +26,7 @@ const Home = ()=>{
         <FlashSaleSection />
     </div>
     <div>
-        <img src="src/assets/images/svg/landingPage/JBLFrame.svg" className="ml-[135px]" />
+        <img src="/assets/images/svg/landingPage/JBLFrame.svg" className="ml-[135px]" />
     </div>
     </>)
   

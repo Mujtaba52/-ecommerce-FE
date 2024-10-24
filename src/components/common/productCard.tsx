@@ -26,10 +26,10 @@ const ProductCard = ({product}:{product: ProductProp})=>{
                 }
                 <div className="flex absolute top-3 right-3 flex-col space-y-2 ">
                     <div className="p-2 bg-white rounded-full shadow-md cursor-pointer">
-                        <img src="src/assets/images/svg/landingPage/heart.svg" className="w-4 h-4" />
+                        <img src="/assets/images/svg/landingPage/heart.svg" className="w-4 h-4" />
                     </div>
                     <div className="p-2 bg-white rounded-full shadow-md cursor-pointer">
-                        <img src="src/assets/images/svg/landingPage/eyeIcon.svg" className="w-4 h-4" />
+                        <img src="/assets/images/svg/landingPage/eyeIcon.svg" className="w-4 h-4" />
                     </div>
                     
                 </div>

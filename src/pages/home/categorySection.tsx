@@ -4,32 +4,32 @@ const CategorySection = ()=>{
         {
           id: 1,
           name: "Phones",
-          icon: "src/assets/images/svg/landingPage/Category-Computer-Icon.svg",
+          icon: "/assets/images/svg/landingPage/Category-Computer-Icon.svg",
         },
         {
           id: 2,
           name: "Computers",
-          icon: "src/assets/images/svg/landingPage/Category-Phone-Icon.svg",
+          icon: "/assets/images/svg/landingPage/Category-Phone-Icon.svg",
         },
         {
           id: 3,
           name: "SmartWatch",
-          icon: "src/assets/images/svg/landingPage/Category-Phone-Icon.svg",
+          icon: "/assets/images/svg/landingPage/Category-Phone-Icon.svg",
         },
         {
           id: 4,
           name: "Camera",
-          icon: "src/assets/images/svg/landingPage/Category-Phone-Icon.svg",
+          icon: "/assets/images/svg/landingPage/Category-Phone-Icon.svg",
         },
         {
           id: 5,
           name: "HeadPhones",
-          icon: "src/assets/images/svg/landingPage/Category-Phone-Icon.svg",
+          icon: "/assets/images/svg/landingPage/Category-Phone-Icon.svg",
         },
         {
           id: 6,
           name: "Gaming",
-          icon: "src/assets/images/svg/landingPage/Category-Phone-Icon.svg",
+          icon: "/assets/images/svg/landingPage/Category-Phone-Icon.svg",
         }
       ];
       
