@@ -8,6 +8,7 @@ const HeadingWithBadge = ({
 }: HeadingWithBadgeProps) => {
   const calculateTimeLeft = () => {
     if (!countdownTarget) return {};
+    if (!countdownTarget) return {};
     const difference = +new Date(countdownTarget) - +new Date();
     let timeLeft = {};
 
@@ -62,6 +63,7 @@ const HeadingWithBadge = ({
         </div>
 
         <div className="flex gap-4 items-center justify-center">
+            {timerComponents.length ? timerComponents : null}
             {timerComponents.length ? timerComponents : null}
         </div>
       </div>
