@@ -6,6 +6,7 @@ import SideBarMenu from "./sideBarMenu";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import TopHeader from "./topHeader";
+import Footer from "./footer";
 
 const Home = ()=>{
    
@@ -28,6 +29,7 @@ const Home = ()=>{
     <div>
         <img src="/assets/images/svg/landingPage/JBLFrame.svg" className="ml-[135px]" />
     </div>
+    <Footer />
     </>)
   
 }

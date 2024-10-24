@@ -1,10 +1,5 @@
 import { useState, useEffect } from "react";
-
-interface HeadingWithBadgeProps {
-  subHeading: string;
-  mainHeading: string;
-  countdownTarget: string; // New prop to pass the end time
-}
+import { HeadingWithBadgeProps } from "../../types";
 
 const HeadingWithBadge = ({
   subHeading,
@@ -61,7 +56,7 @@ const HeadingWithBadge = ({
         </div>
       </div>
       <div className="flex gap-x-24">
-        <div className="h-12 font-Poppins font-semibold text-4xl mb-6 mt-14">
+        <div className="h-12 font-Poppins font-semibold text-4xl mb-6 mt-10">
             {mainHeading}
         </div>
 
