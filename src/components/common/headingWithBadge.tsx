@@ -64,7 +64,6 @@ const HeadingWithBadge = ({
 
         <div className="flex gap-4 items-center justify-center">
             {timerComponents.length ? timerComponents : null}
-            {timerComponents.length ? timerComponents : null}
         </div>
       </div>
      
