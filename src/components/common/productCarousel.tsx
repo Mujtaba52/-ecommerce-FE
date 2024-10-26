@@ -1,24 +1,6 @@
+import { ProductCarouselProps, ProductProp } from "../../types";
 import ProductCard from "./productCard";
 import Slider from "react-slick";
-
-
-//TODO:Add this is in the interface folder
-
-interface ProductProp {
-    id: number;
-    name: string;
-    price:  number;
-    originalPrice:  number;
-    discount :  string | null;
-    rating:  number;
-    totalReviews: number,
-    imageUrl:  string;
-    isInStock: boolean;
-}
-
-interface ProductCarouselProps {
-    products: ProductProp[]; 
-}
 
   function SampleNextArrow(props: any) {
     const { onClick } = props;
@@ -31,7 +13,7 @@ interface ProductCarouselProps {
           borderRadius: "50%",
           cursor: "pointer",
           position: "absolute",
-          top: "-75px",
+          top: "-70px",
           right: "32px",
         }}
         onClick={onClick}
@@ -52,7 +34,7 @@ interface ProductCarouselProps {
           borderRadius: "50%",
           cursor: "pointer",
           position: "absolute",
-          top: "-75px",
+          top: "-70px",
           right: "96px",
         }}
         onClick={onClick}

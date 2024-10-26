@@ -1,3 +1,4 @@
+import HeadingWithBadge from "../../components/common/headingWithBadge";
 
 const CategorySection = ()=>{
     const categories = [
@@ -35,9 +36,7 @@ const CategorySection = ()=>{
       
     return (
         <div className="ml-[135px]">
-             <div className="h-12 font-Poppins font-semibold text-4xl mb-10">
-             Browse By Category
-            </div>
+            <HeadingWithBadge subHeading = {"Category"} mainHeading={"Browse By Category"} />
             <div className="flex gap-8">
                 {
                     categories.map((category, index)=>(

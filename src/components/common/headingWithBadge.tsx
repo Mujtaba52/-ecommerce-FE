@@ -1,10 +1,5 @@
 import { useState, useEffect } from "react";
-
-interface HeadingWithBadgeProps {
-  subHeading: string;
-  mainHeading: string;
-  countdownTarget: string; // New prop to pass the end time
-}
+import { HeadingWithBadgeProps } from "../../types";
 
 const HeadingWithBadge = ({
   subHeading,
@@ -12,6 +7,8 @@ const HeadingWithBadge = ({
   countdownTarget,
 }: HeadingWithBadgeProps) => {
   const calculateTimeLeft = () => {
+    if (!countdownTarget) return {};
+    if (!countdownTarget) return {};
     const difference = +new Date(countdownTarget) - +new Date();
     let timeLeft = {};
 
@@ -61,12 +58,12 @@ const HeadingWithBadge = ({
         </div>
       </div>
       <div className="flex gap-x-24">
-        <div className="h-12 font-Poppins font-semibold text-4xl mb-6 mt-14">
+        <div className="h-12 font-Poppins font-semibold text-4xl mb-6 mt-10">
             {mainHeading}
         </div>
 
         <div className="flex gap-4 items-center justify-center">
-            {timerComponents.length ? timerComponents : <span>Time's up!</span>}
+            {timerComponents.length ? timerComponents : null}
         </div>
       </div>
      

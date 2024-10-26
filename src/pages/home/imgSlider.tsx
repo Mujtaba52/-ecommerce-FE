@@ -17,6 +17,7 @@ const ImgSlider = ()=>{
         "/assets/images/png/landingPage/tcl.webp"
       ]
 
+
     return (
         <div className="pt-8 w-[924px]">
             <Slider {...settings}>
