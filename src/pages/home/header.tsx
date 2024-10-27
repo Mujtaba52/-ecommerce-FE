@@ -18,7 +18,7 @@ const Header = ()=>{
                     <Link to="/about" className="hover:underline underline-offset-4">
                         About
                     </Link>
-                    <Link to="/signup" className="hover:underline underline-offset-4">
+                    <Link to="/sign-up" className="hover:underline underline-offset-4">
                         Sign Up
                     </Link>
                 </div>
