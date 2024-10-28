@@ -1,7 +1,7 @@
 import Slider from "react-slick";
 
 const ImgSlider = ()=>{
-    var settings = {
+    const settings = {
         dots: true,
         infinite: true,
         speed: 1000,

@@ -19,4 +19,8 @@ export interface HeadingWithBadgeProps {
     mainHeading: string;
     countdownTarget?: string;
   }
+
+export interface ArrowProps {
+    onClick?: () => void;
+  }
   

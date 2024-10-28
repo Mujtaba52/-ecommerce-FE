@@ -1,9 +1,8 @@
-import { ProductCarouselProps, ProductProp } from "../../types";
+import { ArrowProps, ProductCarouselProps, ProductProp } from "../../types";
 import ProductCard from "./productCard";
 import Slider from "react-slick";
 
-  function SampleNextArrow(props: any) {
-    const { onClick } = props;
+  function SampleNextArrow({ onClick }: ArrowProps) {
     return (
       <div
         style={{
@@ -23,8 +22,7 @@ import Slider from "react-slick";
     );
   }
   
-  function SamplePrevArrow(props: any) {
-    const { onClick } = props;
+  function SamplePrevArrow({ onClick }: ArrowProps) {
     return (
       <div
         style={{
@@ -45,7 +43,7 @@ import Slider from "react-slick";
   }
   
   const ProductCarousel = ({ products }: ProductCarouselProps) => {
-    var settings = {
+    const settings = {
       dots: false,
       infinite: true,
       speed: 500,
