@@ -1,4 +1,4 @@
-export interface ProductProp {
+export interface Product {
     id: number;
     name: string;
     price:  number;
@@ -11,7 +11,7 @@ export interface ProductProp {
 }
 
 export interface ProductCarouselProps {
-    products: ProductProp[]; 
+    products: Product[]; 
 }
 
 export interface HeadingWithBadgeProps {

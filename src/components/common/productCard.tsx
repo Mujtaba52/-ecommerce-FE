@@ -1,7 +1,13 @@
-import { ProductProp } from "../../types";
+import { Product } from "../../types";
+import { useDispatch } from "react-redux";
+import { add } from "../../redux/slices/cartSlice";
 
-const ProductCard = ({product}:{product: ProductProp})=>{
+const ProductCard = ({product}:{product: Product})=>{
 
+    const dispatch = useDispatch();
+    const addToCart = (product: Product)=>{
+        dispatch(add(product));
+    }
     return (
         <>
             <div className="group relative w-[270px] h-[250px] bg-[#F5F5F5] rounded flex justify-center items-center">
@@ -22,7 +28,7 @@ const ProductCard = ({product}:{product: ProductProp})=>{
                     
                 </div>
                 <img src={product.imageUrl} className="w-48 h-44"/>
-                <button className="absolute bottom-0 left-0 w-full py-3 bg-black text-white text-sm font-semibold transition-opacity duration-300 opacity-0 group-hover:opacity-100">
+                <button onClick={()=>addToCart(product)} className="absolute bottom-0 left-0 w-full py-3 bg-black text-white text-sm font-semibold transition-opacity duration-300 opacity-0 group-hover:opacity-100">
                     Add To Cart
                 </button>
             </div>

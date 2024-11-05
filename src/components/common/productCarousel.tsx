@@ -1,4 +1,4 @@
-import { ArrowProps, ProductCarouselProps, ProductProp } from "../../types";
+import { ArrowProps, ProductCarouselProps, Product } from "../../types";
 import ProductCard from "./productCard";
 import Slider from "react-slick";
 
@@ -58,7 +58,7 @@ import Slider from "react-slick";
       <div style={{ position: "relative", paddingTop: "0px" }}>
         <div className="max-w-[1212px]">
             <Slider {...settings}>
-            {products.map((productProp: ProductProp) => (
+            {products.map((productProp: Product) => (
                 <div key={productProp.id}>
                 <ProductCard product={productProp} />
                 </div>
