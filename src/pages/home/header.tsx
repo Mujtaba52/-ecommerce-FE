@@ -8,9 +8,9 @@ const Header = ()=>{
     return (<>
         <div className="border-b">
             <div className="flex ml-[135px] mt-10 mb-4">
-                <div className="font-Inter font-bold text-2xl mr-48" >
+                <Link to="/" className="font-Inter font-bold text-2xl mr-48" >
                     Exclusive
-                </div>
+                </Link>
                 <div className="font-Poppins font-semibold text-sm flex justify-around gap-x-12 mr-36">
                     <Link to="/" className="hover:underline underline-offset-4">
                         Home
