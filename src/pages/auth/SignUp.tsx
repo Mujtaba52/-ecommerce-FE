@@ -1,5 +1,12 @@
 
+import { useNavigate } from 'react-router-dom';
+
 const SignUp = () => {
+    const navigate = useNavigate();
+
+    const handleLoginClick = () => {
+        navigate('/sign-in');
+      };
   return (
     <>
         <div className="flex gap-32 pt-16">
@@ -29,7 +36,7 @@ const SignUp = () => {
                 </button>
                 <div className="flex justify-evenly">
                     <a className="font-light">Already have an account ?</a>
-                    <button className="underline">Log in</button>
+                    <button onClick={handleLoginClick} className="underline">Log in</button>
                 </div>
             </div>
         </div>
