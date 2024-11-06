@@ -1,4 +1,4 @@
-export interface ProductProp {
+export interface Product {
     id: number;
     name: string;
     price:  number;
@@ -11,12 +11,16 @@ export interface ProductProp {
 }
 
 export interface ProductCarouselProps {
-    products: ProductProp[]; 
+    products: Product[]; 
 }
 
 export interface HeadingWithBadgeProps {
     subHeading: string;
     mainHeading: string;
     countdownTarget?: string;
+  }
+
+export interface ArrowProps {
+    onClick?: () => void;
   }
   

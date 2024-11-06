@@ -1,6 +1,6 @@
 
 const SideBarMenu = ()=>{
-    let categories = [
+    const categories = [
         "Woman's Fashion",
         "Men's Fashion",
         "Electronics",
