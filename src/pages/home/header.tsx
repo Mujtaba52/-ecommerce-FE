@@ -7,10 +7,10 @@ const Header = ()=>{
     const cartItemCount = cartItems.length;
     return (<>
         <div className="border-b">
-            <div className="flex ml-[135px] mt-10 mb-4">
-                <div className="font-Inter font-bold text-2xl mr-48" >
+            <div className="flex ml-[135px] mt-6 mb-2 items-center">
+                <Link to="/" className="font-Inter font-bold text-2xl mr-48" >
                     Exclusive
-                </div>
+                </Link>
                 <div className="font-Poppins font-semibold text-sm flex justify-around gap-x-12 mr-36">
                     <Link to="/" className="hover:underline underline-offset-4">
                         Home

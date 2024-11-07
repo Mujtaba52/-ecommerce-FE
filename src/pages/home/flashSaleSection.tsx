@@ -1,7 +1,14 @@
 import HeadingWithBadge from "../../components/common/headingWithBadge";
 import ProductCarousel from "../../components/common/productCarousel";
+import { useNavigate } from "react-router-dom";
 
 const FlashSaleSection = ()=>{
+    const navigate = useNavigate();
+
+    const handleViewProductClick = () => {
+        navigate('/products');
+      };
+
     const productsList = [
         {
         id: 1,
@@ -60,13 +67,13 @@ const FlashSaleSection = ()=>{
         }
     ];
     return (
-        <div className="ml-[135px]">
+        <div className="ml-[135px] animate-fadeInUp">
             <div>
                 <HeadingWithBadge subHeading = {"Today's"} mainHeading={"Flash Sales"} countdownTarget="2024-10-30T00:00:00" />
             </div>
             <ProductCarousel products = {productsList} />
             <div className="flex justify-center py-16 border-b mr-[135px]">
-                <button className="py-4 px-12 bg-[#DB4444] font-Poppins font-medium text-base text-white rounded">View All Products</button>   
+                <button onClick = {()=>handleViewProductClick()}className="py-4 px-12 bg-[#DB4444] font-Poppins font-medium text-base text-white rounded">View All Products</button>   
             </div>
         </div>
     )

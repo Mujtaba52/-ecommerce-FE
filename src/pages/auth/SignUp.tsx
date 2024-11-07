@@ -1,9 +1,16 @@
 
+import { useNavigate } from 'react-router-dom';
+
 const SignUp = () => {
+    const navigate = useNavigate();
+
+    const handleLoginClick = () => {
+        navigate('/sign-in');
+      };
   return (
     <>
-        <div className="flex gap-32 pt-16">
-            <img src="/assets/images/svg/authPage/authPageSideImg.svg" className="w-[700px] h-[700px]"/>
+        <div className="flex gap-32 pt-12 animate-fadeInUp">
+            <img src="/assets/images/svg/authPage/authPageSideImg.svg" className="w-[750px] h-[550px]"/>
             <div className="flex font-Poppins flex-col">
                 <div className="font-medium text-4xl pb-6"> Create an account</div>
                 <div className="font-normal font-Poppins pb-12">Enter your details below</div>
@@ -29,7 +36,7 @@ const SignUp = () => {
                 </button>
                 <div className="flex justify-evenly">
                     <a className="font-light">Already have an account ?</a>
-                    <button className="underline">Log in</button>
+                    <button onClick={handleLoginClick} className="underline">Log in</button>
                 </div>
             </div>
         </div>

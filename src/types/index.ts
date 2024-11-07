@@ -24,3 +24,9 @@ export interface ArrowProps {
     onClick?: () => void;
   }
   
+
+export interface ApiResponse {
+  statusCode: number;
+	message: string;
+	data: unknown;
+}
