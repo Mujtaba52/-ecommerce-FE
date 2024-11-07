@@ -60,13 +60,12 @@ interface Gamepad {
 const ImageSlider = () => {
   const [selectedImage, setSelectedImage] = useState(productsList[0].imageUrl);
 
-  const handleThumbnailClick = (imageUrl:any) => {
+  const handleThumbnailClick = (imageUrl:string) => {
     setSelectedImage(imageUrl);
   };
 
   return (
     <div className="flex flex-col md:flex-row gap-4 ml-[135px] mt-32">
-          {/* Thumbnail Images */}
         <div className="flex md:flex-col flex-row gap-4 ">
             {productsList.map((product) => (
             <img
