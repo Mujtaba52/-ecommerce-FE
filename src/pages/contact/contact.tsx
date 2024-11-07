@@ -1,6 +1,6 @@
 const Contact = () => {
     return (
-        <div className="flex mt-32 ml-[135px] mb-36 gap-8 ">
+        <div className="flex mt-32 ml-[135px] mb-36 gap-8 animate-fadeInUp">
             <div className="flex flex-col w-80 p-8 border font-Poppins rounded mb-6 h-[425px]">
                 <div className="flex gap-4 mb-6">
                     <img src="/assets/images/svg/contact/phoneIcon.svg" />

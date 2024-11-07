@@ -9,6 +9,7 @@ import { NotFound } from './components/common/NotFound'
 import Footer from './pages/home/footer'
 import ImageSlider from './pages/product/ProductDetails'
 import SignIn from './pages/auth/SignIn'
+import ProductListings from './pages/product/ProductListings'
 
 function App() {
   return (
@@ -21,6 +22,8 @@ function App() {
           <Route path='/sign-up' element={<SignUp />} />
           <Route path='/sign-in' element={<SignIn />} />
           <Route path='/product' element={<ImageSlider />} />
+          <Route path='/about' element={<ProductListings />} />
+          <Route path='/products' element={<ProductListings />} />
           <Route path='*' element={<NotFound />} />
         </Routes>
       <Footer />

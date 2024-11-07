@@ -7,7 +7,7 @@ import "slick-carousel/slick/slick-theme.css";
 
 const Home = ()=>{
     return (
-    <>
+    <div className="animate-fadeInUp">
         <div className="flex gap-8">
             <SideBarMenu />
             <ImgSlider />
@@ -24,7 +24,7 @@ const Home = ()=>{
         <div>
             <img src="/assets/images/svg/landingPage/JBLFrame.svg" className="ml-[135px]" />
         </div>
-    </>
+    </div>
     )
   
 }
