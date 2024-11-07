@@ -36,8 +36,11 @@ const ProductCard = ({product}:{product: Product})=>{
                 <div className="font-Poppins font-medium text-base pb-2">
                     {product.name}
                 </div>
-                <div className="pb-2">{product.price}</div>
-                <div className="pb-2">{product.totalReviews}</div>
+                <div className="pb-2 flex items-center space-x-2">
+                    <span className="text-red-500 font-semibold">${product.price}</span>
+                    <span className="text-gray-500 line-through">${product.price}</span>
+                </div>
+                {/* <div className="pb-2">{product.totalReviews}</div> */}
             </div>
         </>
     )

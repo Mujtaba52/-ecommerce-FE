@@ -23,6 +23,7 @@ function App() {
           <Route path='/sign-in' element={<SignIn />} />
           <Route path='/product' element={<ImageSlider />} />
           <Route path='/about' element={<ProductListings />} />
+          <Route path='/products' element={<ProductListings />} />
           <Route path='*' element={<NotFound />} />
         </Routes>
       <Footer />
