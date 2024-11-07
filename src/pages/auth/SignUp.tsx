@@ -9,8 +9,8 @@ const SignUp = () => {
       };
   return (
     <>
-        <div className="flex gap-32 pt-16">
-            <img src="/assets/images/svg/authPage/authPageSideImg.svg" className="w-[700px] h-[700px]"/>
+        <div className="flex gap-32 pt-12 animate-fadeInUp">
+            <img src="/assets/images/svg/authPage/authPageSideImg.svg" className="w-[750px] h-[550px]"/>
             <div className="flex font-Poppins flex-col">
                 <div className="font-medium text-4xl pb-6"> Create an account</div>
                 <div className="font-normal font-Poppins pb-12">Enter your details below</div>

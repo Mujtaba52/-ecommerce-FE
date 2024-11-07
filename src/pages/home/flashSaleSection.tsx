@@ -60,7 +60,7 @@ const FlashSaleSection = ()=>{
         }
     ];
     return (
-        <div className="ml-[135px]">
+        <div className="ml-[135px] animate-fadeInUp">
             <div>
                 <HeadingWithBadge subHeading = {"Today's"} mainHeading={"Flash Sales"} countdownTarget="2024-10-30T00:00:00" />
             </div>

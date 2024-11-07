@@ -7,7 +7,7 @@ const Header = ()=>{
     const cartItemCount = cartItems.length;
     return (<>
         <div className="border-b">
-            <div className="flex ml-[135px] mt-10 mb-4">
+            <div className="flex ml-[135px] mt-6 mb-2 items-center">
                 <Link to="/" className="font-Inter font-bold text-2xl mr-48" >
                     Exclusive
                 </Link>

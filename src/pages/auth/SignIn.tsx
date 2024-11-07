@@ -2,7 +2,7 @@
 const SignIn = () => {
     return (
       <>
-          <div className="flex gap-32 pt-16">
+          <div className="flex gap-32 pt-16 animate-fadeInUp">
               <img src="/assets/images/svg/authPage/authPageSideImg.svg" className="w-[700px] h-[700px]"/>
               <div className="flex font-Poppins flex-col">
                   <div className="font-medium text-4xl pb-6"> Log in to Exclusive</div>
