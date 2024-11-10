@@ -10,3 +10,12 @@ export const getProducts = async ():Promise<ApiResponse> =>{
         return handleApiError(error);
     }
 };
+
+export const getProductById = async (productId:string):Promise<ApiResponse> => {
+    try{
+        const response = await api.get<ApiResponse>(`/products/${productId}`);
+        return response.data;
+    }catch(error){
+        return handleApiError(error);
+    }
+};
