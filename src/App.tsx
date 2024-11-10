@@ -10,6 +10,7 @@ import Footer from './pages/home/footer'
 import ProductDetail from './pages/product/ProductDetails'
 import SignIn from './pages/auth/SignIn'
 import ProductListings from './pages/product/ProductListings'
+import Cart from './pages/cart/Cart'
 
 function App() {
   return (
@@ -24,6 +25,7 @@ function App() {
           <Route path="/products/:productId" element={<ProductDetail />} />
           <Route path='/about' element={<ProductListings />} />
           <Route path='/products' element={<ProductListings />} />
+          <Route path='/cart' element={<Cart />} />
           <Route path='*' element={<NotFound />} />
         </Routes>
       <Footer />

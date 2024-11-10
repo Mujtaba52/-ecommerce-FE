@@ -1,9 +1,13 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useSelector } from "react-redux";
-import { RootState } from "../../redux/store/store.ts"
+import { RootState } from "@/redux/store/store.ts"
 
 const Header = ()=>{
     const cartItems = useSelector((state: RootState) => state.cart)
+    const navigate = useNavigate();
+    const handleViewCartClick = () =>{
+        navigate('/cart');
+    }
     const cartItemCount = cartItems.length;
     return (<>
         <div className="border-b">
@@ -36,7 +40,7 @@ const Header = ()=>{
                     </div>
                     <img  src="/assets/images/svg/landingPage/heart.svg" alt="Heart Img" className="w-7 h-7 cursor-pointer" />
                     <div className="relative">
-                        <img src="/assets/images/svg/landingPage/cart.svg" alt="Cart Img" className="w-8 h-8 cursor-pointer" />
+                        <img onClick={handleViewCartClick} src="/assets/images/svg/landingPage/cart.svg" alt="Cart Img" className="w-8 h-8 cursor-pointer" />
                         {cartItemCount > 0 && (
                             <div className="absolute -top-2 -right-2 bg-red-600 text-white rounded-full w-5 h-5 flex items-center justify-center text-xs font-semibold">
                                 {cartItemCount}
