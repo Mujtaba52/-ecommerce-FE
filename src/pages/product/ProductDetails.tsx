@@ -1,65 +1,26 @@
-import { useState } from "react";
+import { getProductById } from "@/lib/apis/apiCalls/productApi";
+import { Product } from "@/types";
+import { useState, useEffect } from "react";
+import { useParams } from "react-router-dom";
 
-// Dummy product list
-const productsList = [
-  {
-    id: 1,
-    name: "HAVIT HV-G92 Gamepad",
-    imageUrl: "/assets/images/svg/products/ps5Controller.svg",
-  },
-  {
-    id: 2,
-    name: "AK-900 Wired Keyboard",
-    imageUrl: "/assets/images/svg/products/keyboard.svg",
-  },
-  {
-    id: 3,
-    name: "IPS LCD Gaming Monitor",
-    imageUrl: "/assets/images/svg/products/monitor.svg",
-  },
-  {
-    id: 4,
-    name: "S-Series Comfort Chair",
-    imageUrl: "/assets/images/svg/products/chair.svg",
-  },
-  {
-    id: 5,
-    name: "S-Series Comfort Chair",
-    imageUrl: "/assets/images/svg/products/chair.svg",
-  },
-];
-interface Gamepad {
-    name: string;
-    rating: number;
-    reviewCount: number;
-    inStock: boolean;
-    price: number;
-    description: string;
-    colors: string[];
-    sizes: string[];
-    selectedColor: string;
-    selectedSize: string;
-    quantity: number;
-  }
-  
-  const havicHVG92Gamepad: Gamepad = {
-    name: "Havic HV G-92 Gamepad",
-    rating: 4.0,
-    reviewCount: 150,
-    inStock: true,
-    price: 192.00,
-    description: "PlayStation 5 Controller Skin High quality vinyl with air channel adhesive for easy bubble free install & mess free removal Pressure sensitive.",
-    colors: ["#C0C0C0", "#D27D7D"], // Hex color codes for representation
-    sizes: ["XS", "S", "M", "L", "XL"],
-    selectedColor: "#D27D7D", // Assuming the red color is selected
-    selectedSize: "M", // Assuming "M" size is selected
-    quantity: 2
-  };
   
 // Main component for image slider
-const ImageSlider = () => {
-  const [selectedImage, setSelectedImage] = useState(productsList[0].imageUrl);
+const ProductDetail = () => {
+  const [product, setProduct] = useState<Product | null>(null);
+  const [selectedImage, setSelectedImage] = useState(product?.thumbnail);
+  const { productId } = useParams<{ productId: string }>();
+  
+  const fetchProductDetail = async (productId:string)=>{
+    try{
+      const response: any = await getProductById(productId);
+      setProduct(response as Product);
+    }catch(error){
 
+    }
+  }
+  useEffect(()=>{
+    fetchProductDetail(productId as string);
+  }, [])
   const handleThumbnailClick = (imageUrl:string) => {
     setSelectedImage(imageUrl);
   };
@@ -67,14 +28,14 @@ const ImageSlider = () => {
   return (
     <div className="flex flex-col md:flex-row gap-4 ml-[135px] mt-32">
         <div className="flex md:flex-col flex-row gap-4 ">
-            {productsList.map((product) => (
+            {product?.images.map((imageUrl:string, index: number) => (
             <img
-                key={product.id}
-                src={product.imageUrl}
-                alt={product.name}
-                onClick={() => handleThumbnailClick(product.imageUrl)}
+                key={index}
+                src={imageUrl}
+                alt={imageUrl}
+                onClick={() => handleThumbnailClick(imageUrl)}
                 className={`w-28 h-28 rounded-md cursor-pointer bg-[#F5F5F5] ${
-                selectedImage === product.imageUrl
+                selectedImage === imageUrl
                     ? "border-blue-500"
                     : "border-gray-300"
                 }`}
@@ -84,25 +45,25 @@ const ImageSlider = () => {
       {/* Main Image */}
       <div className="w-[500px] h-[625px]  bg-[#F5F5F5] rounded flex items-center justify-center">
         <img
-          src={selectedImage}
+          src={selectedImage?? product?.images[0]}
           alt="Selected"
           className=" w-4/5 h-4/5 rounded-lg object-contain "
         />
       </div>
     <div className="font-Poppins ml-10 w-96">
-        <div className="font-semibold text-2xl">Havic HV G-92 Gamepad</div>
+        <div className="font-semibold text-2xl">${product?.title}</div>
         <div className="mt-2">Reviews</div>
-        <div className="text-2xl font-normal mt-3">${havicHVG92Gamepad.price}</div>
-        <div className="pb-7 border-b mt-4">{havicHVG92Gamepad.description}</div>
+        <div className="text-2xl font-normal mt-3">${product?.price}</div>
+        <div className="pb-7 border-b mt-4">{product?.description}</div>
         <div className="flex items-baseline gap-6">
           <div className="mt-7">Colors: </div>
-          <div className="flex gap-5">{havicHVG92Gamepad.colors.map((color)=>(
+          <div className="flex gap-5">{product?.colors?.map((color:string)=>(
             <div className={`bg-[${color}] border w-5 h-5 rounded-full`}></div>
           ))}</div>
         </div>
         <div className="flex gap-6 items-baseline">
           <a className="mt-4 text-xl">Size:</a>
-          <a className="flex gap-6">{havicHVG92Gamepad.sizes.map((size)=>(
+          <a className="flex gap-6">{product?.sizes?.map((size:string)=>(
             <div className="border text-sm rounded w-10 h-10 flex justify-center items-center hover:bg-red-600 hover:text-white">{size}</div>
           ))}</a>
         </div>
@@ -130,4 +91,4 @@ const ImageSlider = () => {
   );
 };
 
-export default ImageSlider;
+export default ProductDetail;

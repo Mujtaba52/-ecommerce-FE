@@ -15,7 +15,7 @@ const ProductListings = () => {
     setIsLoading(true);
     try{
       const response: any = await getProducts();
-      
+      //TODO: update this if cond. after integrating your own backend
       if (response.products.length>0) {
         setProducts(response.products as []);
       }else{

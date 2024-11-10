@@ -1,20 +1,26 @@
 import { Product } from "../../types";
 import { useDispatch } from "react-redux";
 import { add } from "../../redux/slices/cartSlice";
+import { useNavigate } from "react-router-dom";
 
-const ProductCard = ({product}:{product: Product})=>{
+const ProductCard= ({product}:{product: Product})=>{
 
     const dispatch = useDispatch();
     const addToCart = (product: Product)=>{
         dispatch(add(product));
     }
+    const navigate = useNavigate();
+    const handleViewProductClick = () => {
+        navigate(`/products/${product.id}`);
+      };
+       
     return (
         <>
             <div className="group relative w-[270px] h-[250px] bg-[#F5F5F5] rounded flex justify-center items-center">
                 {
-                    product.discount && (
+                    product.discountPercentage && (
                         <div className="flex absolute top-3 left-3 font-Poppins text-xs px-3 py-1 bg-red-600 text-white rounded">
-                            -{product.discount}
+                            -{product.discountPercentage}%
                         </div>
                     )
                 }
@@ -22,19 +28,19 @@ const ProductCard = ({product}:{product: Product})=>{
                     <div className="p-2 bg-white rounded-full shadow-md cursor-pointer">
                         <img src="/assets/images/svg/landingPage/heart.svg" className="w-4 h-4" />
                     </div>
-                    <div className="p-2 bg-white rounded-full shadow-md cursor-pointer">
+                    <div onClick={handleViewProductClick} className="p-2 bg-white rounded-full shadow-md cursor-pointer">
                         <img src="/assets/images/svg/landingPage/eyeIcon.svg" className="w-4 h-4" />
                     </div>
                     
                 </div>
-                <img src={product.imageUrl} className="w-48 h-44"/>
+                <img src={product.thumbnail} className="w-48 h-44"/>
                 <button onClick={()=>addToCart(product)} className="absolute bottom-0 left-0 w-full py-3 bg-black text-white text-sm font-semibold transition-opacity duration-300 opacity-0 group-hover:opacity-100">
                     Add To Cart
                 </button>
             </div>
             <div className="h-[72px] w-[270px] ">
                 <div className="font-Poppins font-medium text-base pb-2">
-                    {product.name}
+                    {product.title}
                 </div>
                 <div className="pb-2 flex items-center space-x-2">
                     <span className="text-red-500 font-semibold">${product.price}</span>
