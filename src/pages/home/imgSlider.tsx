@@ -25,7 +25,7 @@ const ImgSlider = ()=>{
 
 
     return (
-        <div className="pt-8 w-[924px]">
+        <div className="pt-8 w-[924px] cursor-pointer">
             <Slider {...settings}>
                 {sliderImages.map((imgUrl, index) => (
                     <div key={index} className="w-full h-96" onClick={() => handleImageClick('/product')}>
