@@ -13,7 +13,7 @@ const SideBarMenu = ()=>{
       ];
     return (
         <div className="border-r">
-            <div className="font-Poppins font-semibold text-sm flex-direction: row mt-10 ml-[135px] w-56 pr-4">
+            <div className=" font-semibold text-sm flex-direction: row mt-10 ml-[135px] w-56 pr-4">
                 {categories.map(( category, index)=> (
                      <div key = {index} className="mt-4">
                      {category}
