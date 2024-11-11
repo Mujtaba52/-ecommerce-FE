@@ -1,19 +1,17 @@
 import { useDispatch, useSelector } from "react-redux";
 import { RootState } from "@/redux/store/store.ts"
 import { Product } from "@/types";
-import { useState } from "react";
 import { remove} from '@/redux/slices/cartSlice'
 
 const Cart = () => {
-  const response = useSelector((state: RootState) => state.cart)
+  const cartItems = useSelector((state: RootState) => state.cart);
   const dispatch = useDispatch();
 
-  const [cartItems, setCartItems] = useState(response)
-  const removeItem = ( index:number)=>{
-    const updatedCartItems = cartItems.filter((_, i)=>i!==index);
-    setCartItems(updatedCartItems);
-    dispatch(remove(index));
-  }
+  const totalCost = cartItems.reduce((acc, item) => acc + item.price, 0);
+
+  const removeItem = (productId: number) => {
+    dispatch(remove(productId));
+  };
 
   return (
     <div className="ml-[135px] mt-40">
@@ -48,7 +46,7 @@ const Cart = () => {
               </div>
               <div className="w-full flex justify-between mb-4 border-b py-2">
                 <div>Subtotal:</div>
-                <div>$1750</div>
+                <div>${totalCost}</div>
               </div>
               <div className="w-full flex justify-between mb-4 border-b py-2">
                 <div>Shipping:</div>
@@ -56,7 +54,7 @@ const Cart = () => {
               </div>
               <div className="w-full flex justify-between mb-4 py-2">
                 <div>Total:</div>
-                <div>$1750</div>
+                <div>${totalCost}</div>
               </div>
               <div className="w-full flex justify-center">
                   <button className="bg-[#DB4444] text-white px-12 py-4 rounded">Proceed to checkout</button>
