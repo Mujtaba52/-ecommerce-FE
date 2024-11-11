@@ -30,7 +30,7 @@ const FlashSaleSection = ()=>{
             </div>
             <ProductCarousel products ={products} />
             <div className="flex justify-center py-16 border-b mr-[135px]">
-                <button onClick = {()=>handleViewProductClick()}className="py-4 px-12 bg-[#DB4444] font-Poppins font-medium text-base text-white rounded">View All Products</button>   
+                <button onClick = {()=>handleViewProductClick()}className="py-4 px-12 bg-[#DB4444]  font-medium text-base text-white rounded">View All Products</button>   
             </div>
         </div>
     )

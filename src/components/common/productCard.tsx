@@ -19,7 +19,7 @@ const ProductCard= ({product}:{product: Product})=>{
             <div className="group relative w-[270px] h-[250px] bg-[#F5F5F5] rounded flex justify-center items-center">
                 {
                     product.discountPercentage && (
-                        <div className="flex absolute top-3 left-3 font-Poppins text-xs px-3 py-1 bg-red-600 text-white rounded">
+                        <div className="flex absolute top-3 left-3  text-xs px-3 py-1 bg-red-600 text-white rounded">
                             -{product.discountPercentage}%
                         </div>
                     )
@@ -39,7 +39,7 @@ const ProductCard= ({product}:{product: Product})=>{
                 </button>
             </div>
             <div className="h-[72px] w-[270px] ">
-                <div className="font-Poppins font-medium text-base pb-2">
+                <div className=" font-medium text-base pb-2">
                     {product.title}
                 </div>
                 <div className="pb-2 flex items-center space-x-2">

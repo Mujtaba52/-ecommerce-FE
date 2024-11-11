@@ -3,6 +3,10 @@ module.exports = {
   content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
   theme: {
     extend: {
+      fontFamily: {
+        Inter :["Inter"],
+        sans: ["Poppins", "sans-serif"],
+      },
     },
     keyframes: {
       fadeInUp: {
@@ -13,10 +17,7 @@ module.exports = {
     animation: {
       fadeInUp: 'fadeInUp 0.7s ease-out',
     },
-    fontFamily: {
-      Inter :["Inter"],
-      Poppins: ["Poppins"]
-    },
+    
   },
   plugins: [],
 }
