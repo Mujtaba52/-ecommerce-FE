@@ -3,9 +3,11 @@ import HeadingWithBadge from "../../components/common/headingWithBadge";
 import ProductCarousel from "../../components/common/productCarousel";
 import { useNavigate } from "react-router-dom";
 import { getProducts } from "@/lib/apis/apiCalls/productApi";
+import ProductCardSkeleton from "@/components/common/ProductCardSkeleton";
 
 const FlashSaleSection = ()=>{
     const navigate = useNavigate();
+    const [isLoading,setIsLoading] = useState(true);
     const [products, setProducts] = useState([]);
     const handleViewProductClick = () => {
         navigate('/products');
@@ -14,6 +16,7 @@ const FlashSaleSection = ()=>{
         try{
             const response:any = await getProducts();
             setProducts(response.products);
+            setIsLoading(false);
         }
         catch(error){
             console.error("Error fetching flash sale items:", error);
@@ -26,9 +29,16 @@ const FlashSaleSection = ()=>{
     return (
         <div className="ml-[135px] animate-fadeInUp">
             <div>
-                <HeadingWithBadge subHeading = {"Today's"} mainHeading={"Flash Sales"} countdownTarget="2024-10-30T00:00:00" />
+                <HeadingWithBadge subHeading = {"Today's"} mainHeading={"Flash Sales"} countdownTarget="2024-12-30T00:00:00" />
             </div>
-            <ProductCarousel products ={products} />
+            {
+                isLoading ? 
+                <div className="flex justify-center border-b mr-[135px] gap-8">
+                    {Array(4).fill(0).map((_, idx:number) => <ProductCardSkeleton key={idx} />)}
+                </div>
+                :
+                <ProductCarousel products ={products} />
+            }
             <div className="flex justify-center py-16 border-b mr-[135px]">
                 <button onClick = {()=>handleViewProductClick()}className="py-4 px-12 bg-[#DB4444]  font-medium text-base text-white rounded">View All Products</button>   
             </div>
