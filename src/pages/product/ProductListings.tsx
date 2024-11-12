@@ -1,9 +1,8 @@
 import { getProducts } from "@/lib/apis/apiCalls/productApi";
 // import { ApiResponse } from "@/types";
 import { useEffect, useState } from "react"
-import Lottie from "lottie-react";
-import LoadingCart from "@/assets/lotties/loadingCart.json"
 import ProductCard from "@/components/common/productCard";
+import ProductCardSkeleton from "@/components/common/ProductCardSkeleton";
 
 const ProductListings = () => {
 
@@ -12,7 +11,7 @@ const ProductListings = () => {
   const [error, setError] = useState<string | null>(null);
 
   const fetchProducts = async ()=>{
-    setIsLoading(true);
+    (true);
     try{
       const response: any = await getProducts();
       //TODO: update this if cond. after integrating your own backend
@@ -36,13 +35,13 @@ const ProductListings = () => {
   return (
     <div className="min-h-screen ml-[135px] mr-40 mt-20">
       {isLoading ? (
-        <div className="flex justify-center items-center min-h-screen">
-          <Lottie animationData={LoadingCart} loop={true} className="h-28" />
+        <div className="flex flex-wrap gap-4">
+        {Array(12).fill(0).map((_, idx) => <ProductCardSkeleton key={idx} />)}
         </div>
       ) : error ? (
         <p className="text-center text-red-500">{error}</p>
       ) : (
-        <div className="flex flex-wrap gap-4"> {/* Responsive grid */}
+        <div className="flex flex-wrap gap-4">
           {products.map((product: any) => (
             <div key={product.id} className="rounded animate-fadeInUp">
               {/* TODO: update this for production */}
