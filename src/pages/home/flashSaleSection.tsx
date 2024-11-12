@@ -7,20 +7,22 @@ import ProductCardSkeleton from "@/components/common/ProductCardSkeleton";
 
 const FlashSaleSection = ()=>{
     const navigate = useNavigate();
-    const [isLoading,setIsLoading] = useState(true);
+    const [isLoading,setIsLoading] = useState(false);
     const [products, setProducts] = useState([]);
     const handleViewProductClick = () => {
         navigate('/products');
       };
     const fetchFlashSaleItems = async ()=>{
+        setIsLoading(true);
         try{
             const response:any = await getProducts();
             setProducts(response.products);
-            setIsLoading(false);
         }
         catch(error){
             console.error("Error fetching flash sale items:", error);
-        }
+        } finally{
+            setIsLoading(false);
+          }
     }
     useEffect(()=>{
         fetchFlashSaleItems();

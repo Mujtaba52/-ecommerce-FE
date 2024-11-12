@@ -11,7 +11,7 @@ const ProductListings = () => {
   const [error, setError] = useState<string | null>(null);
 
   const fetchProducts = async ()=>{
-    setIsLoading(true);
+    (true);
     try{
       const response: any = await getProducts();
       //TODO: update this if cond. after integrating your own backend
