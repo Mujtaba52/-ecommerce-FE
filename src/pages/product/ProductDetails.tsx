@@ -50,7 +50,7 @@ const ProductDetail = () => {
           className=" w-4/5 h-4/5 rounded-lg object-contain "
         />
       </div>
-    <div className="font-Poppins ml-10 w-96">
+    <div className=" ml-10 w-96">
         <div className="font-semibold text-2xl">${product?.title}</div>
         <div className="mt-2">Reviews</div>
         <div className="text-2xl font-normal mt-3">${product?.price}</div>
