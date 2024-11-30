@@ -42,7 +42,7 @@ export interface ProductMeta {
 
 export interface Product {
   id: number;
-  title: string;
+  name: string;
   description: string;
   category: string;
   price: number;
@@ -64,5 +64,11 @@ export interface Product {
   minimumOrderQuantity: number;
   meta: ProductMeta;
   images: string[];
-  thumbnail: string;
+  thumbnailUrl: string;
+}
+
+export interface ProductPayload {
+  page?: number;
+  limit?:number;
+  category?: string;
 }
