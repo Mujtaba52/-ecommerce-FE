@@ -1,21 +1,23 @@
+import { useNavigate } from "react-router-dom";
 import HeadingWithBadge from "../../components/common/headingWithBadge";
 import { Smartphone, Computer, Camera, Armchair, Salad, Watch } from "lucide-react";
 
 const CategorySection = () => {
+  const navigate = useNavigate();
   const categories = [
     {
       id: 1,
-      name: "Phones",
+      name: "Smartphones",
       icon: <Smartphone size={36} className="text-current" />,
     },
     {
       id: 2,
-      name: "Computers",
+      name: "Laptops",
       icon: <Computer size={36} className="text-current" />,
     },
     {
       id: 3,
-      name: "SmartWatch",
+      name: "Mens-watches",
       icon: <Watch size={36} className="text-current" />,
     },
     {
@@ -30,10 +32,14 @@ const CategorySection = () => {
     },
     {
       id: 6,
-      name: "Food",
+      name: "Groceries",
       icon: <Salad size={36} className="text-current" />,
     },
   ];
+
+  const handleViewCategoryClick= (category: string)=>{
+    navigate(`/products?page=1&limit=10&category=${category}`);
+  }
 
   return (
     <div className="ml-[135px]">
@@ -45,6 +51,7 @@ const CategorySection = () => {
         {categories.map((category) => (
           <div
             key={category.id}
+            onClick={()=>handleViewCategoryClick(category.name.toLowerCase())}
             className="flex flex-col items-center justify-center w-40 h-40 border border-gray-300 rounded-lg cursor-pointer transition-all duration-300 hover:bg-red-500 group"
           >
             <div className="mb-2 transition-colors group-hover:text-white">

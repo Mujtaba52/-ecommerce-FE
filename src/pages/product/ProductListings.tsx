@@ -3,6 +3,7 @@ import { useQuery } from "@tanstack/react-query";
 import ProductCard from "@/components/common/productCard";
 import ProductCardSkeleton from "@/components/common/ProductCardSkeleton";
 import { getProducts } from "@/lib/apis/apiCalls/productApi";
+import { Product } from "@/types";
 
 const ProductListings = () => {
   const [searchParams, setSearchParams] = useSearchParams();
@@ -38,7 +39,7 @@ const ProductListings = () => {
       ) : (
         <>
           <div className="flex flex-wrap gap-4">
-            {data.products.map((product: any) => (
+            {data.products.map((product: Product) => (
               <div key={product.id} className="rounded animate-fadeInUp">
                 <ProductCard product={product} />
               </div>
