@@ -15,7 +15,7 @@ const ProductDetail = () => {
       const response: any = await getProductById(productId);
       setProduct(response as Product);
     }catch(error){
-
+      console.log(error)
     }
   }
   useEffect(()=>{
