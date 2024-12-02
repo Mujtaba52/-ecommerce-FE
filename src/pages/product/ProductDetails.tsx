@@ -7,7 +7,7 @@ import { useParams } from "react-router-dom";
 // Main component for image slider
 const ProductDetail = () => {
   const [product, setProduct] = useState<Product | null>(null);
-  const [selectedImage, setSelectedImage] = useState(product?.thumbnail);
+  const [selectedImage, setSelectedImage] = useState(product?.thumbnailUrl);
   const { productId } = useParams<{ productId: string }>();
   
   const fetchProductDetail = async (productId:string)=>{
@@ -15,7 +15,7 @@ const ProductDetail = () => {
       const response: any = await getProductById(productId);
       setProduct(response as Product);
     }catch(error){
-
+      console.log(error)
     }
   }
   useEffect(()=>{
@@ -51,9 +51,9 @@ const ProductDetail = () => {
         />
       </div>
     <div className=" ml-10 w-96">
-        <div className="font-semibold text-2xl">${product?.title}</div>
+        <div className="font-semibold text-2xl">{product?.name}</div>
         <div className="mt-2">Reviews</div>
-        <div className="text-2xl font-normal mt-3">${product?.price}</div>
+        <div className="text-2xl font-normal mt-3">{product?.price}$</div>
         <div className="pb-7 border-b mt-4">{product?.description}</div>
         <div className="flex items-baseline gap-6">
           <div className="mt-7">Colors: </div>

@@ -33,14 +33,14 @@ const ProductCard= ({product}:{product: Product})=>{
                     </div>
                     
                 </div>
-                <img src={product.thumbnail} className="w-48 h-44"/>
-                <button onClick={()=>addToCart(product)} className="absolute bottom-0 left-0 w-full py-3 bg-black text-white text-sm font-semibold transition-opacity duration-300 opacity-0 group-hover:opacity-100">
+                <img src={product.thumbnailUrl} className="w-48 h-44"/>
+                <button onClick={()=>addToCart(product)} className="absolute bottom-0 left-0 w-full py-3 bg-black text-white text-sm font-semibold transition-opacity duration-300 opacity-0 group-hover:opacity-100 active:bg-[#F5F5F5]">
                     Add To Cart
                 </button>
             </div>
             <div className="h-[72px] w-[270px] ">
                 <div className=" font-medium text-base pb-2">
-                    {product.title}
+                    {product.name}
                 </div>
                 <div className="pb-2 flex items-center space-x-2">
                     <span className="text-red-500 font-semibold">${product.price}</span>

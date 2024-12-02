@@ -1,7 +1,7 @@
 import React from 'react';
 import { IMessageOptions } from "react-chatbot-kit/build/src/interfaces/IMessages";
 
-const ActionProvider = ({ createChatBotMessage, setState, children }: {
+const ActionProvider = ({ /*createChatBotMessage, setState,*/ children }: {
   createChatBotMessage: (
     message: string,
     options: IMessageOptions

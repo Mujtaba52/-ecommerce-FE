@@ -1,57 +1,78 @@
-import { getProducts } from "@/lib/apis/apiCalls/productApi";
-// import { ApiResponse } from "@/types";
-import { useEffect, useState } from "react"
+import { useSearchParams, useNavigate } from "react-router-dom";
+import { useQuery } from "@tanstack/react-query";
 import ProductCard from "@/components/common/productCard";
 import ProductCardSkeleton from "@/components/common/ProductCardSkeleton";
+import { getProducts } from "@/lib/apis/apiCalls/productApi";
+import { Product } from "@/types";
+import { useEffect } from "react";
 
 const ProductListings = () => {
+  const [searchParams, setSearchParams] = useSearchParams();
+  const navigate = useNavigate();
 
-  const [isLoading, setIsLoading] = useState<boolean>(false);
-  const [products, setProducts] = useState([])
-  const [error, setError] = useState<string | null>(null);
+  const pageIndex = Number(searchParams.get("page") || 1);
+  const limit = Number(searchParams.get("limit") || 12);
+  const category = searchParams.get("category") || "";
 
-  const fetchProducts = async ()=>{
-    (true);
-    try{
-      const response: any = await getProducts();
-      //TODO: update this if cond. after integrating your own backend
-      if (response.products.length>0) {
-        setProducts(response.products as []);
-      }else{
-        setError("Failed to load products.");
-      }
-    }catch(error){
-      setError("An error occurred while fetching products.");
-    } finally{
-      setIsLoading(false);
-    }
+  const { isLoading, isError, data, error } = useQuery({
+    queryKey: ["products", { pageIndex, limit, category }],
+    queryFn: () => getProducts(pageIndex, limit, category),
+  });
 
-  }
+  // Handle Pagination
+  const handlePageChange = (newPage: number) => {
+    setSearchParams({ page: newPage.toString(), limit: limit.toString(), category });
+    navigate(`/products?page=${newPage}&limit=${limit}${category ? '&category='+category : ''}`);
+  };
 
   useEffect(()=>{
-    fetchProducts();
-  },[])
-
+    scrollTo(0,0);
+  },[pageIndex]);
+  
   return (
     <div className="min-h-screen ml-[135px] mr-40 mt-20">
       {isLoading ? (
         <div className="flex flex-wrap gap-4">
-        {Array(12).fill(0).map((_, idx) => <ProductCardSkeleton key={idx} />)}
+          {Array(limit)
+            .fill(0)
+            .map((_, idx) => (
+              <ProductCardSkeleton key={idx} />
+            ))}
         </div>
-      ) : error ? (
-        <p className="text-center text-red-500">{error}</p>
+      ) : isError ? (
+        <p className="text-center text-red-500">{error.message}</p>
       ) : (
-        <div className="flex flex-wrap gap-4">
-          {products.map((product: any) => (
-            <div key={product.id} className="rounded animate-fadeInUp">
-              {/* TODO: update this for production */}
-             <ProductCard product={{...product,name:product.title, imageUrl: product.thumbnail}}/>
-            </div>
-          ))}
-        </div>
+        <>
+          <div className="flex flex-wrap gap-4">
+            {data.products.map((product: Product) => (
+              <div key={product.id} className="rounded animate-fadeInUp">
+                <ProductCard product={product} />
+              </div>
+            ))}
+          </div>
+          <div className="flex justify-center items-center mt-8 gap-4">
+            <button
+              onClick={() => handlePageChange(pageIndex - 1)}
+              disabled={pageIndex === 1}
+              className="px-4 py-2 bg-gray-200 rounded hover:bg-gray-300 disabled:opacity-50 disabled:cursor-not-allowed"
+            >
+              Previous
+            </button>
+            <span>
+              Page {pageIndex} of {Math.ceil(data.totalRecords / limit)}
+            </span>
+            <button
+              onClick={() => handlePageChange(pageIndex + 1)}
+              disabled={pageIndex * limit >= data.totalRecords}
+              className="px-4 py-2 bg-gray-200 rounded hover:bg-gray-300 disabled:opacity-50 disabled:cursor-not-allowed"
+            >
+              Next
+            </button>
+          </div>
+        </>
       )}
     </div>
   );
-}
+};
 
-export default ProductListings
+export default ProductListings;
