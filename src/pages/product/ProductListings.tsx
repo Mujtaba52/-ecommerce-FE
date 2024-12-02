@@ -4,6 +4,7 @@ import ProductCard from "@/components/common/productCard";
 import ProductCardSkeleton from "@/components/common/ProductCardSkeleton";
 import { getProducts } from "@/lib/apis/apiCalls/productApi";
 import { Product } from "@/types";
+import { useEffect } from "react";
 
 const ProductListings = () => {
   const [searchParams, setSearchParams] = useSearchParams();
@@ -24,6 +25,10 @@ const ProductListings = () => {
     navigate(`/products?page=${newPage}&limit=${limit}${category ? '&category='+category : ''}`);
   };
 
+  useEffect(()=>{
+    scrollTo(0,0);
+  },[pageIndex]);
+  
   return (
     <div className="min-h-screen ml-[135px] mr-40 mt-20">
       {isLoading ? (

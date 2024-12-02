@@ -1,4 +1,4 @@
-import { ApiResponse, ProductPayload } from "@/types";
+import { ApiResponse } from "@/types";
 import { handleApiError } from "@/lib/utils/helperFunctions";
 import api from "@/lib/apis";
 

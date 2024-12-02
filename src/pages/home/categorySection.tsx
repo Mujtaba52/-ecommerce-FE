@@ -45,7 +45,7 @@ const CategorySection = () => {
     <div className="ml-[135px]">
       <HeadingWithBadge
         subHeading={"Categories"}
-        mainHeading={"Browse By Category"}
+        mainHeading={"Popular Categories"}
       />
       <div className="flex gap-11 mt-4">
         {categories.map((category) => (
