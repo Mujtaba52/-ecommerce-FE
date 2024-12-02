@@ -11,12 +11,15 @@ import ProductDetail from './pages/product/ProductDetails'
 import SignIn from './pages/auth/SignIn'
 import ProductListings from './pages/product/ProductListings'
 import Cart from './pages/cart/Cart'
+import { ChatBot } from './components/chatBot/ChatBot'
+
 
 function App() {
   return (
     <>
       <TopHeader />
       <Header />
+      <ChatBot />
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path='/contact' element={<Contact />} />

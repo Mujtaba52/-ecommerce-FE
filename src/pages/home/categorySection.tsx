@@ -1,51 +1,63 @@
 import HeadingWithBadge from "../../components/common/headingWithBadge";
+import { Smartphone, Computer, Camera, Armchair, Salad, Watch } from "lucide-react";
 
-const CategorySection = ()=>{
-    const categories = [
-        {
-          id: 1,
-          name: "Phones",
-          icon: "/assets/images/svg/landingPage/Category-Computer-Icon.svg",
-        },
-        {
-          id: 2,
-          name: "Computers",
-          icon: "/assets/images/svg/landingPage/Category-Phone-Icon.svg",
-        },
-        {
-          id: 3,
-          name: "SmartWatch",
-          icon: "/assets/images/svg/landingPage/Category-Phone-Icon.svg",
-        },
-        {
-          id: 4,
-          name: "Camera",
-          icon: "/assets/images/svg/landingPage/Category-Phone-Icon.svg",
-        },
-        {
-          id: 5,
-          name: "HeadPhones",
-          icon: "/assets/images/svg/landingPage/Category-Phone-Icon.svg",
-        },
-        {
-          id: 6,
-          name: "Gaming",
-          icon: "/assets/images/svg/landingPage/Category-Phone-Icon.svg",
-        }
-      ];
-      
-    return (
-        <div className="ml-[135px]">
-            <HeadingWithBadge subHeading = {"Category"} mainHeading={"Browse By Category"} />
-            <div className="flex gap-8">
-                {
-                    categories.map((category, index)=>(
-                        <img key={index} src={category.icon} className=" hover:bg-[#DB4444] rounded" />
-                    ))
-                }
+const CategorySection = () => {
+  const categories = [
+    {
+      id: 1,
+      name: "Phones",
+      icon: <Smartphone size={36} className="text-current" />,
+    },
+    {
+      id: 2,
+      name: "Computers",
+      icon: <Computer size={36} className="text-current" />,
+    },
+    {
+      id: 3,
+      name: "SmartWatch",
+      icon: <Watch size={36} className="text-current" />,
+    },
+    {
+      id: 4,
+      name: "Camera",
+      icon: <Camera size={36} className="text-current" />,
+    },
+    {
+      id: 5,
+      name: "Furniture",
+      icon: <Armchair size={36} className="text-current" />,
+    },
+    {
+      id: 6,
+      name: "Food",
+      icon: <Salad size={36} className="text-current" />,
+    },
+  ];
+
+  return (
+    <div className="ml-[135px]">
+      <HeadingWithBadge
+        subHeading={"Categories"}
+        mainHeading={"Browse By Category"}
+      />
+      <div className="flex gap-11 mt-4">
+        {categories.map((category) => (
+          <div
+            key={category.id}
+            className="flex flex-col items-center justify-center w-40 h-40 border border-gray-300 rounded-lg cursor-pointer transition-all duration-300 hover:bg-red-500 group"
+          >
+            <div className="mb-2 transition-colors group-hover:text-white">
+              {category.icon}
             </div>
-        </div>
-    )
-}
+            <span className="text-center text-sm font-medium transition-colors group-hover:text-white">
+              {category.name}
+            </span>
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+};
 
 export default CategorySection;
