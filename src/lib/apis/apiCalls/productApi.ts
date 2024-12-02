@@ -2,9 +2,9 @@ import { ApiResponse } from "@/types";
 import { handleApiError } from "@/lib/utils/helperFunctions";
 import api from "@/lib/apis";
 
-export const getProducts = async ( page: number = 1,limit?: number, category?:string):Promise<any> =>{
+export const getProducts = async ( page: number = 1,limit?: number, category?:string, name?:string):Promise<any> =>{
     try{
-        const response = await api.get<ApiResponse>(`/products${page ? '?page='+page : ''}${limit ? '&limit='+limit : ''}${category ? '&category='+category : ''}`);
+        const response = await api.get<ApiResponse>(`/products${page ? '?page='+page : ''}${limit ? '&limit='+limit : ''}${category ? '&category='+category : ''}${name ? '&name='+name : ''}`);
         return response.data;
     }catch(error){
         return handleApiError(error);

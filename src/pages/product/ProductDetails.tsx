@@ -20,7 +20,7 @@ const ProductDetail = () => {
   }
   useEffect(()=>{
     fetchProductDetail(productId as string);
-  }, [])
+  }, [productId])
   const handleThumbnailClick = (imageUrl:string) => {
     setSelectedImage(imageUrl);
   };
