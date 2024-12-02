@@ -14,7 +14,7 @@ const Header = ()=>{
         <div className="border-b">
             <div className="flex ml-[135px] mt-2 mb-2 items-center">
                 <Link to="/" className="font-Inter font-bold text-2xl mr-48" >
-                    <img src= "public/assets/images/png/landingPage/EIcon.png" className="w-20 h-20"/>
+                    <img src= "assets/images/png/landingPage/EIcon.png" className="w-20 h-20"/>
                 </Link>
                 <div className=" font-semibold text-sm flex justify-around gap-x-12 mr-36">
                     <Link to="/" className="hover:underline underline-offset-4">
