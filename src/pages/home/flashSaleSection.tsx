@@ -10,7 +10,7 @@ const FlashSaleSection = ()=>{
     const [isLoading,setIsLoading] = useState(false);
     const [products, setProducts] = useState([]);
     const handleViewProductClick = () => {
-        navigate('/products');
+        navigate('/products?page=1&limit=10');
       };
     const fetchFlashSaleItems = async ()=>{
         setIsLoading(true);

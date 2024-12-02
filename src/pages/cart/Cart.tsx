@@ -27,8 +27,8 @@ const Cart = () => {
             <button className="absolute -top-3 -left-3 bg-transparent text-white flex items-center justify-center w-9 h-9 invisible group-hover:visible">
               <img onClick={()=>removeItem(index)} src="assets/images/svg/cart/cancelIcon.svg" className="w-5 h-5" alt="Remove" />
             </button>
-              <img src={item.thumbnail} className="w-20 h-20" />
-              <div>{item.title}</div>
+              <img src={item.thumbnailUrl} className="w-20 h-20" />
+              <div>{item.name}</div>
             </div>
             <div>${item.price}</div>
             <input type="text" className="w-20 text-center border rounded" value={1}></input>
